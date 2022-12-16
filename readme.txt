@@ -1,4 +1,4 @@
-the3tester.py adlı dosyada kodunuzu fonksiyon ismi ve fonksiyonun alacağı 2 değer hariç yazan yere yapıştırın.
+the3tester.py adlı dosyada kodunuzu dosyada yazan yere yapıştırın.
 çalıştırın. 
 tek tek doğruları ve yanlışları söyleyecek. 
 caseler cases.txt dosyasında sıralı şekilde duruyor. 

@@ -61,6 +61,6 @@ def pattern_search(P, I):
 
 for x in range(len(Pt)):
     if pattern_search(Pt[x], It[x])==Rt[x]:
-        continue
+        print(x+1,"doğru")
     else:
-        print(x+1,"yanlış senin cevabın", pattern_search(Pt[x], It[x]),"doğru cevap",Rt[x] )
+        print(x+1,"yanlış, senin cevabın:", pattern_search(Pt[x], It[x])," doğru cevap:",Rt[x] )

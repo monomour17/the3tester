@@ -1,7 +1,7 @@
 Pt = (["AXA", "XAY"],
     ["AXA", "XAZ"],
     ["ayz", "cba"],
-    ["111111111111111", "11111111111111"],
+    ["11111111", "11111111"],
     ["XAX", "XXA"],
     ["XAA", "AXx"],
     ["zya", "cba"],
@@ -13,12 +13,13 @@ Pt = (["AXA", "XAY"],
     ["111", "456"],
     ["111", "654"],
     ["151", "161"],
-    ["1111", "4321"])
+    ["1111", "4321"],
+    ["kjih098","gefdcba"])
 
 It = (["tuz<abcd", ">#sAY#at", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
     ["tuz<abcd", ">#sAY#at", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
     ["tuz<abcd", ">#sAY#at", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
-    ["tuz<abcd", ">#sAY#at", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
+    ["tuz<abcd", ">#sAY#at", "uzyXAAr."],
     ["AXAXAXAX", "AXAAAXXA", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
     ["AXAXAXAX", "AXAAAXXA", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
     ["AXAXAXAX", "AXAAAXXA", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
@@ -30,7 +31,8 @@ It = (["tuz<abcd", ">#sAY#at", "uzyXAAr.", "r,lAXxio", "z#a!yabc", "yazy?zya"],
     ["111111","123456","131111"],
     ["111111","123456","131111"],
     ["111111","123456","131111"],
-    ["111111","123456","131111"])
+    ["111111","123456","131111"],
+    ["1234567","abcdfeg","890hijk"])
 
 Rt= ((1, 3, 270),
     False,
@@ -47,7 +49,8 @@ Rt= ((1, 3, 270),
     (0,3,0),
     (1,3,180),
     (0,4,270),
-    False)
+    False,
+    (1,0,180))
 
 
 

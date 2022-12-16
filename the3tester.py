@@ -52,8 +52,8 @@ Rt= ((1, 3, 270),
 
 
 
-def pattern_search(P, I):
-    "YOUR CODE HERE"
+
+"""KODUNUZU BU ARAYA YAPIŞTIRIN. fonksiyonunuzun isminin "pattern_search" olmasına dikkat edin"""
 
 
 

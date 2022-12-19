@@ -1,41 +1,50 @@
-import time
+
+"""the3.py dosyasini bu dosyanin oldugu klasore atin"""
+
+import time, threading, os
+
+if not os.path.isfile("the3.py"):
+    raise FileNotFoundError("Lutfen the3.py dosyasini bu dosyanin bulundugu klasore atin")
+from the3 import pattern_search
+
 images=open("the3I.txt")
 results=open("the3R.txt")
 patterns=open("the3P.txt")
 image=images.read().splitlines()
 result=results.read().splitlines()
 pattern=patterns.read().splitlines()
-imagelist=[]
-resultlist=[]
-patternlist=[]
-for i in range(len(image)):
-    imagelist.append(eval(image[i]))
-    resultlist.append(eval(result[i]))
-    patternlist.append(eval(pattern[i]))
+wrongs = []
 
-
-
-"""KODUNUZU BURANIN HEMEN ALTINA YAPIŞTIRIN. fonksiyonunuzun isminin "pattern_search" olmasına dikkat edin.
-the3Itxt the3R.txt the3P.txt the3tester.py dosyalarının aynı konumda olduğundan emin olun
-vscode, pycharm gibi programlar bazı kişilerde /home üzerinden çalıştığı için dosyaları okumayıp hata verebilir. 
-o durumlarda bu dosyayı terminalde çalıştırın"""
-
-
-
-
-
-
-
-
-uzunluk=len(imagelist)
-print(f"toplamda {uzunluk} kadar liste vardır. bazı listeler uzun olduğu için bekletebilir, erken kapatmayın.")
-for x in range(len(imagelist)):
+start = time.time()
+uzunluk=len(image)
+print(f"toplamda {uzunluk} kadar liste vardir. bazi listeler uzun oldugu icin bekletebilir, erken kapatmayin.")
+def testing(x):
     start = time.time()
-    if pattern_search(patternlist[x], imagelist[x])==resultlist[x]:
-        print(x+1,"doğru kalan test sayısı ",(uzunluk-x-1))
-        elapsed = time.time() - start
-        print(f"{elapsed:.2f} sn sürdü")
+    cevap = pattern_search(eval(pattern[x]), eval(image[x]))
+    if cevap==eval(result[x]):
+        pass
     else:
-        print(x+1,"yanlış, senin cevabın:", pattern_search(patternlist[x], imagelist[x])," doğru cevap:",resultlist[x] ,"doğru kalan test sayısı ",(uzunluk-x-1) )
-        elapsed = time.time() - start
-        print(f"{elapsed:.2f} sn sürdü")
+        wrongs.append((x,eval(result[x]),cevap))
+        
+
+def grading():
+    threads = []
+    for i in range(uzunluk):
+        thread = threading.Thread(target=testing,args=[i])
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+
+grading()
+
+if wrongs:
+    print("YANLISLAR:")
+    for i in wrongs:
+        print(f"Case Numarasi: {i[0]}, Dogru Cevap: {i[1]}, Verilen Cevap: {i[2]}")
+    print(f"Toplam yanlis sayisi: {len(wrongs)}")
+else:
+    print("\nTUM CASELER DOGRU")
+
+elapsed = time.time() - start
+print(f"Toplamda {'%.2f'%elapsed} sn surdu.")

@@ -1,3 +1,4 @@
+import time
 images=open("the3I.txt")
 results=open("the3R.txt")
 patterns=open("the3P.txt")
@@ -14,7 +15,7 @@ for i in range(len(image)):
 
 
 
-"""KODUNUZU BU ARAYA YAPIŞTIRIN. fonksiyonunuzun isminin "pattern_search" olmasına dikkat edin.
+"""KODUNUZU BURANIN HEMEN ALTINA YAPIŞTIRIN. fonksiyonunuzun isminin "pattern_search" olmasına dikkat edin.
 the3Itxt the3R.txt the3P.txt the3tester.py dosyalarının aynı konumda olduğundan emin olun
 vscode, pycharm gibi programlar bazı kişilerde /home üzerinden çalıştığı için dosyaları okumayıp hata verebilir. 
 o durumlarda bu dosyayı terminalde çalıştırın"""
@@ -22,10 +23,19 @@ o durumlarda bu dosyayı terminalde çalıştırın"""
 
 
 
+
+
+
+
 uzunluk=len(imagelist)
 print(f"toplamda {uzunluk} kadar liste vardır. bazı listeler uzun olduğu için bekletebilir, erken kapatmayın.")
 for x in range(len(imagelist)):
+    start = time.time()
     if pattern_search(patternlist[x], imagelist[x])==resultlist[x]:
-        print(x+1,"doğru")
+        print(x+1,"doğru kalan test sayısı ",(uzunluk-x-1))
+        elapsed = time.time() - start
+        print(f"{elapsed:.2f} sn sürdü")
     else:
-        print(x+1,"yanlış, senin cevabın:", pattern_search(patternlist[x], imagelist[x])," doğru cevap:",resultlist[x] )
+        print(x+1,"yanlış, senin cevabın:", pattern_search(patternlist[x], imagelist[x])," doğru cevap:",resultlist[x] ,"doğru kalan test sayısı ",(uzunluk-x-1) )
+        elapsed = time.time() - start
+        print(f"{elapsed:.2f} sn sürdü")

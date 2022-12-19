@@ -1,6 +1,6 @@
-tüm dosyaların aynı klasörde ve zipte olmadığına emin olun.
-the3tester.py adlı dosyada kodunuzu dosyada yazan yere yapıştırın.
-çalıştırın. 
+tüm dosyaların aynı klasörde olduğuna ve zipte olmadığına emin olun.
+the3tester.py adlı python dosyanızı tester dosyalarını indirdiğiniz konuma kopyalayın.
+the3tester.py adlı dosyayı çalıştırın. 
 tek tek doğruları ve yanlışları söyleyecek. 
 results images patterns kendi isimlerinin baş harfli dosyalarda sıralı şekilde duruyor. 
 eğer hata varsa ya da şu case de olsa iyi olur derseniz yazın değiştireyim.
